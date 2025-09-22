@@ -1,0 +1,22 @@
+- Create a repository
+- Initialize the repository
+- node_modules, package.json ,package-lock.json
+- Install express
+- listen to port 
+- write request handlers for /test ,/hello
+- Install nodemon and update scripts
+- what is the use  of "-g"  while npm install
+- Differnt between caret and tilde (^,~)
+
+- initialize git
+- gitignore
+- Create a remote repo on github
+- push all code to remote repo
+- play routes
+- order matter in routes
+- Install Postman
+- write handler GET,POST,PATCH,DELETE api
+- explore routing use ?,*,()
+- use of regex in routing /a/,/*fly&/
+- Reading the query params in route
+- Reading dynamic routes
