@@ -2,14 +2,11 @@
 - Initialize the repository
 - node_modules, package.json ,package-lock.json
 - Install express
-- listen to port 
+- listen to port
 - write request handlers for /test ,/hello
 - Install nodemon and update scripts
-- what is the use  of "-g"  while npm install
+- what is the use of "-g" while npm install
 - Differnt between caret and tilde (^,~)
-
-
-
 
 - initialize git
 - gitignore
@@ -19,12 +16,10 @@
 - order matter in routes
 - Install Postman
 - write handler GET,POST,PATCH,DELETE api
-- explore routing use ?,*,()
-- use of regex in routing /a/,/*fly&/
+- explore routing use ?,\*,()
+- use of regex in routing /a/,/\*fly&/
 - Reading the query params in route
 - Reading dynamic routes
-
-
 
 - Multiple Route Handlers - play with the code
 - next()
@@ -36,30 +31,27 @@
 - write a dummy auth middleware for admin
 - write a dummy auth middleware for all user routes, except user/login
 
-
 - Create a free cluster on MongoDB official webside (Mongo Atlas)
 - Install mongoose libray
 - Connect your application to the Database 'Connect-url"
 - call the connectDB function and connect to database befor starting appliction on port
-- create  a useSchema &user Model
+- create a useSchema &user Model
 - create POST /singup api to add data to database
 - Push some documents using Api calls from postman
 - Error Handing using try ,catch
-
 
 - Js object vs Json (difference)
 - Add the express .json middleware to your app
 - Make your singup api dynamic to recive data fro the end user
 - User .findOne with duplucate email ids, which object returned
 - Api get user by email
-- Api Feed api Get/feed - get  all the users from the database
+- Api Feed api Get/feed - get all the users from the database
 - Create a delete user api
 - Difference between Patch and put
-- api  Update user
+- api Update user
 - Explore the Mongoose Documention for model methods
 - What are options in a Model.findOneAndUpdate method, explore more about it
 - api Update the user with email id
-
 
 - Explore schematype options from the documention
 - add required ,unique, lowercase ,min, minLength,trim
@@ -72,8 +64,6 @@
 - Install Validator
 - explore validator library function and use Validator funs for password , email
 - never trust req.body
-
-
 
 - Validate data in Signup API
 - Install bcrypt package
