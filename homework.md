@@ -70,3 +70,16 @@
 - Create Password using bcrypt.hash & save the user is excrupted password
 - Create login api
 - Compare passwords and throw errors if email or password is inavlid
+
+
+
+- install cookie-parse
+- just send a dummmy cookie to user
+- create get /profle Api and check if you get the cookie back
+- In login API, after eamil and password validate ,create a jWt token and send it user data
+- read the cookies inside your profle API and find the logged in user
+- userAuth Middleware
+- add the userAuth middle ware in profile Api and a new sendConnnectionRequest Api
+- set the Expiry of JWT and cookies to 7 days 
+- create userSchema method to getJwt()
+- Create userSchema method to comparePassword(passwordInputUser)
