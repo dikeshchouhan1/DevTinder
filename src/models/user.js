@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
     gender: {
       type: String,
       validate(value) {
-        if (!["maile", "female", "other"].includes(value)) {
+        if (!["male", "female", "other"].includes(value)) {
           throw new Error("Gender data is not valid");
         }
       },
@@ -40,6 +40,9 @@ const userSchema = new mongoose.Schema(
     photoUrl: {
       type: String,
       default: "this is a default about of the user!",
+    },
+    about:{
+        type:String,
     },
     skills: {
       type: [String],

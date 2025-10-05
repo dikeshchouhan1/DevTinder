@@ -41,7 +41,7 @@ authRouter.post("/login", async (req, res) => {
     if (isPasswordVaild) {
       // Create a JWt token
       const token = await user.getJWT();
-      console.log(token);
+ 
 
       // add the token to cookie and send the responce back to the user
       res.cookie("token", token,{
@@ -56,5 +56,11 @@ authRouter.post("/login", async (req, res) => {
   }
 });
 
+authRouter.post("/logout", async(req,res)=>{
+    res.cookie("token",null,{
+        expires: new Date(Date.now()),
+    })
+     res.send("Logout Successfull")
+})
 
 module.exports=authRouter
