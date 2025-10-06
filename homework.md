@@ -97,3 +97,16 @@
 - Create PATCH/profile/edit
 - Create PATCH/profile/password API=> forget password API
 - Make you vaildate all data in every POST,PATCH APIs
+
+
+- Create Connnection Request Schema
+- Send Connection Request api
+- Proper vaildation of data
+- think about all corner cases
+- $or query $and  query in mongodb
+- Schema.pre("save") function
+- Read more about indexes in mongoDB
+- why do we need index in DB?
+- what is the advantage and disadvantage of creating
+- Read the arcticale about compond indexs
+- ALWAYS THINKS ABOUT CORNER CASES

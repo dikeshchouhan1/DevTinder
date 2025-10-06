@@ -6,8 +6,8 @@
 - POST/profile/password
 
 ## profileRouter
-- POST/request/send/intereted/:userId
-- POST/request/send/ignored/:userId
+- POST/request/send/:Status/:userId
+
 
 ## connectionRequestRouter
 - POST/request/review/accepted/:requestId
@@ -18,4 +18,4 @@
 - GET/user/requests/received
 - GET/user/feed - Get you the profile of other users on platform
 
-Status: ignore, interested , accepted , rejected
+Status: ignored, interested , accepted , rejected
