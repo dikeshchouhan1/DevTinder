@@ -110,3 +110,13 @@
 - what is the advantage and disadvantage of creating
 - Read the arcticale about compond indexs
 - ALWAYS THINKS ABOUT CORNER CASES
+
+
+- write code with proper validation for POST /request/review/:status/:requestId
+- Throught process - POST VS GET
+- Read about ref and populate 
+- Create GET/user/requests/received with  all the checks
+- Create GET /user/connections
+
+- Logic for GET /feed API
+- Explore the $min ,$and ,$ne and other query operators
