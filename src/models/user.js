@@ -38,10 +38,11 @@ const userSchema = new mongoose.Schema(
     },
     photoUrl: {
       type: String,
-      default: "this is a default about of the user!",
+      default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwVLdSDmgrZN7TkzbHJb8dD0_7ASUQuERL2A&s",
     },
     about:{
         type:String,
+        default:"i am a stundent"
     },
     skills: {
       type: [String],

@@ -1,12 +1,11 @@
-const express =require('express');
+const express = require("express");
 const { valiidateSignUpDate } = require("../utils/vaildation");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
-const authRouter=express.Router();
+const authRouter = express.Router();
 
-
-authRouter.post("/singup", async (req, res) => {
+authRouter.post("/signup", async (req, res) => {
   try {
     valiidateSignUpDate(req);
 
@@ -21,13 +20,20 @@ authRouter.post("/singup", async (req, res) => {
       password: passwordHash,
     });
 
-    await user.save();
-    res.send("user is created");
+    const saveUser = await user.save();
+
+    const token = await saveUser.getJWT();
+
+    // add the token to cookie and send the responce back to the user
+    res.cookie("token", token, {
+      expires: new Date(Date.now() + 1 * 3600000),
+    });
+
+    res.json({ message: "user Added successfully", data: saveUser });
   } catch (err) {
     res.status(400).send("ERROR :" + err.message);
   }
 });
-
 
 authRouter.post("/login", async (req, res) => {
   try {
@@ -37,17 +43,16 @@ authRouter.post("/login", async (req, res) => {
     if (!user) {
       throw new Error("Invalid Credentials");
     }
-    const isPasswordVaild = await user.validatePassword(password)
+    const isPasswordVaild = await user.validatePassword(password);
     if (isPasswordVaild) {
       // Create a JWt token
       const token = await user.getJWT();
- 
 
       // add the token to cookie and send the responce back to the user
-      res.cookie("token", token,{
-        expires:new Date(Date.now()+1*3600000)
+      res.cookie("token", token, {
+        expires: new Date(Date.now() + 1 * 3600000),
       });
-      res.send("Login Successfull");
+      res.send(user);
     } else {
       throw new Error("Invalid Credentials");
     }
@@ -56,11 +61,11 @@ authRouter.post("/login", async (req, res) => {
   }
 });
 
-authRouter.post("/logout", async(req,res)=>{
-    res.cookie("token",null,{
-        expires: new Date(Date.now()),
-    })
-     res.send("Logout Successfull")
-})
+authRouter.post("/logout", async (req, res) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+  });
+  res.send("Logout Successfull");
+});
 
-module.exports=authRouter
+module.exports = authRouter;

@@ -6,7 +6,7 @@ const User=require("../models/user")
          // Read the token fron the req.cookies
     const {token}=req.cookies;
     if(!token){
-        throw new Error("Token is not vaild")
+        return res.status(401).send("Please Login !")
     }
 
     // validate the  token

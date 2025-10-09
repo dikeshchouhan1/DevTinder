@@ -1,12 +1,18 @@
 const express = require("express");
 const connectDB = require("./config/database");
+const cors=require("cors")
 const app = express();
 
 
 
 const cookieParser = require("cookie-parser");
 
-
+app.use(cors(
+  {
+  origin: "http://localhost:5173", // your React frontend
+  credentials:true, // add Authorization for JWT
+}
+))
 app.use(express.json());
 app.use(cookieParser());
 
