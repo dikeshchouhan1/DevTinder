@@ -2,8 +2,8 @@ const express = require("express");
 const connectDB = require("./config/database");
 const cors=require("cors")
 const app = express();
-
-
+const http = require("http");
+const initializeSocket = require("./utils/socket");
 
 const cookieParser = require("cookie-parser");
 
@@ -26,11 +26,13 @@ app.use("/",profileRouter);
 app.use("/",requestRouter);
 app.use("/",userRouter);
 
+const server = http.createServer(app);
+initializeSocket(server);
 
 connectDB()
   .then(() => {
     console.log("database is connected");
-    app.listen(9000, () => {
+    server.listen(9000, () => {
       console.log("server is listen port 9000");
     });
   })
