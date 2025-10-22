@@ -7,12 +7,12 @@ const initializeSocket = require("./utils/socket");
 
 const cookieParser = require("cookie-parser");
 
-app.use(cors(
-  {
-  origin: "http://localhost:5173", // your React frontend
-  credentials:true, // add Authorization for JWT
-}
-))
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
 app.use(express.json());
 app.use(cookieParser());
 
